@@ -9,7 +9,7 @@
 
 API_KEY_INFURA=Replace=your infura api key [Used for sepolia testnet]
 API_KEY_ETHERSCAN=Replace=your etherscan api key [Used for sepolia testnet]
-WALLET_PRIVATE_KEY=your wallet private key [Used for BankInteract.s.sol]
+WALLET_PRIVATE_KEY=your wallet private key [Used for BankInteract.s.sol/Bank.s.sol]
 USER1_PRIVATE_KEY= private key of user1 [Used for BankInteract.s.sol]
 USER2_PRIVATE_KEY= private key of user2 [Used for BankInteract.s.sol]
 ```
@@ -56,12 +56,12 @@ anvil
 
 ##### Deploy to Anvil:
 ```sh
-forge script script/BankInteract.s.sol:BankInteractScript --fork-url http://localhost:8545 --broadcast
+forge script script/Bank.s.sol --fork-url localhost --broadcast
 ```
 
 ##### Deploy to Anvil with Interact.sol:
 ```sh
-forge script script/BankInteract.s.sol:BankInteractScript --fork-url http://localhost:8545 --broadcast
+forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost --broadcast
 ```
 
 For instructions on how to deploy to a testnet or mainnet, check out the

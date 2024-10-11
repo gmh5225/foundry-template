@@ -49,11 +49,17 @@ forge coverage
 
 ### Deploy
 
-Deploy to Anvil:
+#### Anvil:
 ```sh
 anvil
 ```
 
+##### Deploy to Anvil:
+```sh
+forge script script/BankInteract.s.sol:BankInteractScript --fork-url http://localhost:8545 --broadcast
+```
+
+##### Deploy to Anvil with Interact.sol:
 ```sh
 forge script script/BankInteract.s.sol:BankInteractScript --fork-url http://localhost:8545 --broadcast
 ```

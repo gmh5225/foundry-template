@@ -11,7 +11,7 @@ contract BankInteractScript is Script {
     address public user2;
 
     function setUp() public {
-        user1 = vm.addr(1); // 使用 vm.addr 生成地址
+        user1 = vm.addr(1); // Use vm.addr to generate the address
         user2 = vm.addr(2);
     }
 

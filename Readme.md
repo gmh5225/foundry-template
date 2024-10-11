@@ -64,20 +64,29 @@ forge test --gas-report
 
 ### Deploy
 
-#### Anvil:
+#### Anvil
 ```
 anvil
 ```
 
-##### Deploy to ``Anvil``:
+##### Deploy to ``Anvil``
 ```
 forge script script/Bank.s.sol --fork-url localhost --broadcast
 ```
 
-##### Deploy to ``Anvil`` with ``BankInteract.s.sol``:
+##### Deploy to ``Anvil`` with ``BankInteract.s.sol``
 ```
 forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost --broadcast
 ```
+
+#### Sepolia:
+
+##### Deploy to ``Sepolia``
+```
+forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url sepolia --broadcast -verify -vvvv
+```
+
+
 
 For instructions on how to deploy to a testnet or mainnet, check out the
 [Solidity Scripting](https://book.getfoundry.sh/tutorials/solidity-scripting.html) tutorial.

@@ -6,7 +6,7 @@ import "forge-std/console2.sol";
 import "../src/Bank.sol";
 
 contract BankSepoliaScript is Script {
-    function setUp() public {}
+    function setUp() public { }
 
     function run() public {
         uint256 deployerPrivateKey = vm.envUint("SEPOLIA_WALLET_PRIVATE_KEY");

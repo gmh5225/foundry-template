@@ -11,7 +11,7 @@ contract BankScript is Script {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(deployerPrivateKey);
 
-        Bank bank = new Bank();
+        new Bank();
 
         vm.stopBroadcast();
     }

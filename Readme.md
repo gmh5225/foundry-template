@@ -1,6 +1,5 @@
-# Transient Store Foundry Template
+# Foundry Template
 
-A foundry template with custom `solc` binaries (from [transient-storage](https://github.com/ethereum/solidity/tree/transient-store)) that supports transient storage opcodes in inline assembly.
 
 ## Usage
 

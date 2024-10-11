@@ -19,7 +19,7 @@ USER2_PRIVATE_KEY= private key of user2 [Used for BankInteract.s.sol]
 
 Build the contracts:
 
-```sh
+```
 forge build
 ```
 
@@ -27,7 +27,7 @@ forge build
 
 Delete the build artifacts and cache directories:
 
-```sh
+```
 forge clean
 ```
 
@@ -35,7 +35,7 @@ forge clean
 
 Compile the contracts:
 
-```sh
+```
 forge build
 ```
 
@@ -43,7 +43,7 @@ forge build
 
 Run the tests:
 
-```sh
+```
 forge test
 ```
 
@@ -51,24 +51,24 @@ forge test
 
 Get a test coverage report:
 
-```sh
+```
 forge coverage
 ```
 
 ### Deploy
 
 #### Anvil:
-```sh
+```
 anvil
 ```
 
 ##### Deploy to Anvil:
-```sh
+```
 forge script script/Bank.s.sol --fork-url localhost --broadcast
 ```
 
 ##### Deploy to Anvil with BankInteract.s.sol:
-```sh
+```
 forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost --broadcast
 ```
 
@@ -79,7 +79,7 @@ For instructions on how to deploy to a testnet or mainnet, check out the
 
 Format the contracts:
 
-```sh
+```
 forge fmt
 ```
 
@@ -87,7 +87,7 @@ forge fmt
 
 Get a gas report:
 
-```sh
+```
 forge test --gas-report
 ```
 

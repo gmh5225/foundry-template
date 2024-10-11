@@ -97,23 +97,6 @@ $ bun run test:coverage:report
 ```
 
 
-## Example contract
-
-```solidity
-contract SimpleTStore {
-    function tstore(uint key, uint value) external {
-        assembly {
-            tstore(key, value)
-        }
-    }
-    function tload(uint key) external view returns (uint value) {
-        assembly {
-            value := tload(key)
-        }
-    }
-}
-```
-
 ## Credits
 - https://github.com/PaulRBerg/foundry-template
 - https://github.com/hrkrshnn/tstore-template

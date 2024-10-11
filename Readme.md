@@ -2,8 +2,8 @@
 
 A foundry template with custom `solc` binaries (from [transient-storage](https://github.com/ethereum/solidity/tree/transient-store)) that supports transient storage opcodes in inline assembly.
 ```bash
-forge build --use bin/solc-windows.exe
-forge test  --use bin/solc-windows.exe
+forge build
+forge test
 ```
 
 ## Example contract

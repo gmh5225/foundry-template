@@ -39,6 +39,14 @@ Compile the contracts:
 forge build
 ```
 
+### Test
+
+Run the tests:
+
+```sh
+forge test
+```
+
 ### Coverage
 
 Get a test coverage report:
@@ -82,36 +90,6 @@ Get a gas report:
 ```sh
 forge test --gas-report
 ```
-
-### Lint
-
-Lint the contracts:
-
-```sh
-bun run lint
-```
-
-### Test
-
-Run the tests:
-
-```sh
-forge test
-```
-
-Generate test coverage and output result to the terminal:
-
-```sh
-bun run test:coverage
-```
-
-Generate test coverage with lcov report (you'll have to open the `./coverage/index.html` file in your browser, to do so
-simply copy paste the path):
-
-```sh
-bun run test:coverage:report
-```
-
 
 ## Credits
 - https://github.com/PaulRBerg/foundry-template

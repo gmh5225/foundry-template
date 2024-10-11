@@ -47,13 +47,18 @@ Run the tests:
 forge test
 ```
 
-### Coverage
-
 Get a test coverage report:
 
 ```
 forge coverage
 ```
+
+Get a gas report:
+
+```
+forge test --gas-report
+```
+
 
 ### Deploy
 
@@ -81,14 +86,6 @@ Format the contracts:
 
 ```
 forge fmt
-```
-
-### Gas Usage
-
-Get a gas report:
-
-```
-forge test --gas-report
 ```
 
 ## Credits

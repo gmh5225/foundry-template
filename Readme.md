@@ -59,7 +59,7 @@ anvil
 forge script script/Bank.s.sol --fork-url localhost --broadcast
 ```
 
-##### Deploy to Anvil with Interact.sol:
+##### Deploy to Anvil with BankInteract.s.sol:
 ```sh
 forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost --broadcast
 ```

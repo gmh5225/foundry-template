@@ -16,7 +16,7 @@ contract BankInteractScript is Script {
     }
 
     function run() public {
-        uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
+        uint256 deployerPrivateKey = vm.envUint("WALLET_PRIVATE_KEY");
         address deployer = vm.addr(deployerPrivateKey);
 
         // Query deployer wallet balance before operations

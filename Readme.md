@@ -3,7 +3,10 @@
 
 ## Usage
 
-This is a list of the most frequently needed commands.
+
+### Replace your api key
+- See [this file](.env)
+
 
 ### Build
 

@@ -67,12 +67,12 @@ forge test --gas-report
 anvil
 ```
 
-##### Deploy to Anvil:
+##### Deploy to ``Anvil``:
 ```
 forge script script/Bank.s.sol --fork-url localhost --broadcast
 ```
 
-##### Deploy to Anvil with ``BankInteract.s.sol``:
+##### Deploy to ``Anvil`` with ``BankInteract.s.sol``:
 ```
 forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost --broadcast
 ```

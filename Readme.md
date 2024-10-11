@@ -4,8 +4,11 @@
 ## Usage
 
 
-### Replace your api key
-- See [this file](.env)
+### Create a ``.env`` file
+```
+API_KEY_INFURA=Replace your infura api key
+API_KEY_ETHERSCAN=Replace your etherscan api key
+```
 
 
 ### Build

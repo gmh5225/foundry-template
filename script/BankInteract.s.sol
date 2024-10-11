@@ -21,36 +21,43 @@ contract BankInteractScript is Script {
 
         // Query deployer wallet balance before operations
         uint256 deployerBalance = deployer.balance;
-        console2.log("Deployer wallet balance before operations: %s.%s ETH", deployerBalance / 1e18, (deployerBalance % 1e18) / 1e14);
+        console2.log(
+            "Deployer wallet balance before operations: %s.%s ETH",
+            deployerBalance / 1e18,
+            (deployerBalance % 1e18) / 1e14
+        );
 
         vm.startBroadcast(deployerPrivateKey);
 
         // Deploy Bank contract (new creation here)
         bank = new Bank();
         console2.log("Bank contract deployed at address:", address(bank));
-        
+
         // Use the address of the deployed Bank contract
-        // address bankAddress = 0x5FbDB2315678afecb367f032d93F642f64180aa3; // Replace with the actual deployed contract address
+        // address bankAddress = 0x5FbDB2315678afecb367f032d93F642f64180aa3; // Replace with the actual deployed
+        // contract address
         // bank = Bank(bankAddress);
 
         // Deposit
-        bank.deposit{value: 1 ether}();
+        bank.deposit{ value: 1 ether }();
         console2.log("Deployer deposited 1 ETH");
 
         vm.stopBroadcast();
 
         // Query deployer wallet balance after deposit
         deployerBalance = deployer.balance;
-        console2.log("Deployer wallet balance after deposit: %s.%s ETH", deployerBalance / 1e18, (deployerBalance % 1e18) / 1e14);
+        console2.log(
+            "Deployer wallet balance after deposit: %s.%s ETH", deployerBalance / 1e18, (deployerBalance % 1e18) / 1e14
+        );
 
         // Deposit from user1
         vm.broadcast(vm.envUint("USER1_PRIVATE_KEY"));
-        bank.deposit{value: 2 ether}();
+        bank.deposit{ value: 2 ether }();
         console2.log("User1 deposited 2 ETH");
 
         // Deposit from user2
         vm.broadcast(vm.envUint("USER2_PRIVATE_KEY"));
-        bank.deposit{value: 3 ether}();
+        bank.deposit{ value: 3 ether }();
         console2.log("User2 deposited 3 ETH");
 
         // Query balance
@@ -60,9 +67,9 @@ contract BankInteractScript is Script {
         // Query top 3 depositors
         address[3] memory topDepositors = bank.getTopDepositors();
         console2.log("Top 3 depositors:");
-        for (uint i = 0; i < 3; i++) {
+        for (uint256 i = 0; i < 3; i++) {
             uint256 depositAmount = bank.getDepositAmount(topDepositors[i]);
-            console2.log("%s: %s", i+1, topDepositors[i]);
+            console2.log("%s: %s", i + 1, topDepositors[i]);
             console2.log("depositAmount: %s.%s ETH", depositAmount / 1e18, (depositAmount % 1e18) / 1e14);
         }
 
@@ -76,7 +83,11 @@ contract BankInteractScript is Script {
 
         // Query deployer wallet balance after all operations
         deployerBalance = deployer.balance;
-        console2.log("Deployer wallet balance after all operations: %s.%s ETH", deployerBalance / 1e18, (deployerBalance % 1e18) / 1e14);
+        console2.log(
+            "Deployer wallet balance after all operations: %s.%s ETH",
+            deployerBalance / 1e18,
+            (deployerBalance % 1e18) / 1e14
+        );
 
         // Query balance again
         balance = bank.getBalance();
@@ -84,9 +95,9 @@ contract BankInteractScript is Script {
 
         // Query top 3 depositors again
         console2.log("Top 3 depositors after withdrawal:");
-        for (uint i = 0; i < 3; i++) {
+        for (uint256 i = 0; i < 3; i++) {
             uint256 depositAmount = bank.getDepositAmount(topDepositors[i]);
-            console2.log("%s: %s", i+1, topDepositors[i]);
+            console2.log("%s: %s", i + 1, topDepositors[i]);
             console2.log("depositAmount: %s.%s ETH", depositAmount / 1e18, (depositAmount % 1e18) / 1e14);
         }
     }
@@ -138,24 +149,20 @@ contract BankInteractScript is Script {
 // Block: 44
 // Paid: 0.000001361385699392 ETH (401656 gas * 0.003389432 gwei)
 
-
 // ##### anvil-hardhat
 // ✅  [Success]Hash: 0x5b075dd8a5aa2b3b460c72677bdcf6aeb9a4c2d0f288e4f7c22d941070d66e90
 // Block: 45
 // Paid: 0.000000219165097083 ETH (73617 gas * 0.002977099 gwei)
-
 
 // ##### anvil-hardhat
 // ✅  [Success]Hash: 0x4889d7f7d8660ffc96004ef6ca2b78c5278498687c3960ee0eeb771fae0ab27b
 // Block: 46
 // Paid: 0.000000199202995013 ETH (76417 gas * 0.002606789 gwei)
 
-
 // ##### anvil-hardhat
 // ✅  [Success]Hash: 0x1a8a8cb724a1e32c240acdf68b88ead1cfceaea3d53abb6effd00c3fb00a199d
 // Block: 47
 // Paid: 0.000000180820803417 ETH (79217 gas * 0.002282601 gwei)
-
 
 // ##### anvil-hardhat
 // ✅  [Success]Hash: 0xde4fd93a82f99d1e8913449134ec321ff6d852174d5a8ebf08937f43518114bc
@@ -163,7 +170,6 @@ contract BankInteractScript is Script {
 // Paid: 0.000000061394618628 ETH (30716 gas * 0.001998783 gwei)
 
 // ✅ Sequence #1 on anvil-hardhat | Total Paid: 0.000002021969213533 ETH (661623 gas * avg 0.00265094 gwei)
-
 
 // ==========================
 

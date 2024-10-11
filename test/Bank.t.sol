@@ -22,7 +22,7 @@ contract BankTest is Test {
     function testDeposit() public {
         vm.deal(user1, 1 ether);
         vm.prank(user1);
-        bank.deposit{value: 0.5 ether}();
+        bank.deposit{ value: 0.5 ether }();
         assertEq(bank.balances(user1), 0.5 ether);
     }
 
@@ -32,11 +32,11 @@ contract BankTest is Test {
         vm.deal(user3, 3 ether);
 
         vm.prank(user1);
-        bank.deposit{value: 0.5 ether}();
+        bank.deposit{ value: 0.5 ether }();
         vm.prank(user2);
-        bank.deposit{value: 1 ether}();
+        bank.deposit{ value: 1 ether }();
         vm.prank(user3);
-        bank.deposit{value: 1.5 ether}();
+        bank.deposit{ value: 1.5 ether }();
 
         address[3] memory topDepositors = bank.getTopDepositors();
         assertEq(topDepositors[0], user3);
@@ -45,13 +45,13 @@ contract BankTest is Test {
     }
 
     // function testWithdraw() public {
-    //     address bankAdmin = bank.admin(); 
+    //     address bankAdmin = bank.admin();
     //     vm.deal(address(bank), 1 ether);
     //     uint256 initialBalance = bankAdmin.balance;
-        
+
     //     vm.prank(bankAdmin);
     //     bank.withdraw(0.5 ether);
-        
+
     //     assertEq(bankAdmin.balance, initialBalance + 0.5 ether);
     // }
 

@@ -15,7 +15,6 @@ contract Bank {
         deposit();
     }
 
-
     // Deposit function
     function deposit() public payable {
         require(msg.value > 0, "Deposit amount must be greater than 0");
@@ -27,17 +26,17 @@ contract Bank {
     function updateTopDepositors(address depositor) private {
         uint256 depositAmount = balances[depositor];
         uint256 index = 3;
-        
-        for (uint i = 0; i < 3; i++) {
+
+        for (uint256 i = 0; i < 3; i++) {
             if (depositAmount > balances[topDepositors[i]]) {
                 index = i;
                 break;
             }
         }
-        
+
         if (index < 3) {
-            for (uint i = 2; i > index; i--) {
-                topDepositors[i] = topDepositors[i-1];
+            for (uint256 i = 2; i > index; i--) {
+                topDepositors[i] = topDepositors[i - 1];
             }
             topDepositors[index] = depositor;
         }
@@ -65,4 +64,3 @@ contract Bank {
         return balances[depositor];
     }
 }
-

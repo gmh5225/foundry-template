@@ -2,7 +2,7 @@
 pragma solidity ^0.8.28;
 
 import "forge-std/Script.sol";
-import "../src/Bank.sol";
+import "src/Bank.sol";
 
 contract BankScript is Script {
     function setUp() public {}

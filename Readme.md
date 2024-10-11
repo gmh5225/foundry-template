@@ -86,6 +86,10 @@ forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost -
 forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url sepolia --broadcast -verify -vvvv
 ```
 
+##### Interact with ``Sepolia``
+```
+forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --fork-url sepolia --broadcast
+```
 
 
 For instructions on how to deploy to a testnet or mainnet, check out the

@@ -7,11 +7,11 @@
 ### Create a ``.env`` file
 ```
 
-API_KEY_INFURA=Replace=your infura api key [Used for sepolia testnet]
-API_KEY_ETHERSCAN=Replace=your etherscan api key [Used for sepolia testnet]
+API_KEY_INFURA=your infura api key [Used for sepolia testnet]
+API_KEY_ETHERSCAN=your etherscan api key [Used for sepolia testnet]
 WALLET_PRIVATE_KEY=your wallet private key [Used for BankInteract.s.sol/Bank.s.sol]
-USER1_PRIVATE_KEY= private key of user1 [Used for BankInteract.s.sol]
-USER2_PRIVATE_KEY= private key of user2 [Used for BankInteract.s.sol]
+USER1_PRIVATE_KEY=private key of user1 [Used for BankInteract.s.sol]
+USER2_PRIVATE_KEY=private key of user2 [Used for BankInteract.s.sol]
 ```
 
 

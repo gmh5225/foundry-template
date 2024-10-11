@@ -23,6 +23,6 @@ contract SimpleTStore {
 }
 ```
 
-## Credit
+## Credits
 - https://github.com/PaulRBerg/foundry-template
 - https://github.com/hrkrshnn/tstore-template

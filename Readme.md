@@ -42,7 +42,7 @@ $ forge coverage
 Deploy to Anvil:
 
 ```sh
-$ forge script script/Deploy.s.sol --broadcast --fork-url http://localhost:8545
+$ forge script script/BankInteract.s.sol:BankInteractScript --fork-url http://localhost:8545 --broadcast
 ```
 
 For this script to work, you need to have a `MNEMONIC` environment variable set to a valid

@@ -33,11 +33,6 @@ contract BankInteractScript is Script {
         bank = new Bank();
         console2.log("Bank contract deployed at address:", address(bank));
 
-        // Use the address of the deployed Bank contract
-        // address bankAddress = 0x5FbDB2315678afecb367f032d93F642f64180aa3; // Replace with the actual deployed
-        // contract address
-        // bank = Bank(bankAddress);
-
         // Deposit
         bank.deposit{ value: 1 ether }();
         console2.log("Deployer deposited 1 ETH");

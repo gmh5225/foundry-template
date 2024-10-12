@@ -9,7 +9,6 @@ contract Bank {
     // Custom errors
     error DepositTooLow();
     error OnlyAdminCanWithdraw();
-    error InsufficientBalance(uint256 requested, uint256 available);
 
     constructor() {
         admin = msg.sender;
@@ -57,11 +56,12 @@ contract Bank {
         if (msg.sender != admin) {
             revert OnlyAdminCanWithdraw();
         }
-        // Revert if requested amount exceeds balance
-        if (amount > address(this).balance) {
-            revert InsufficientBalance(amount, address(this).balance);
+        // If the requested amount is greater than the balance, set amount to the balance
+        uint256 balance = address(this).balance;
+        amount = amount > balance ? balance : amount;
+        if (amount != 0) {
+            payable(admin).transfer(amount);
         }
-        payable(admin).transfer(amount);
     }
 
     // Query contract balance

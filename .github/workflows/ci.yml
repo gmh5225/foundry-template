@@ -22,6 +22,6 @@ jobs:
       - name: Run tests
         run: | 
           forge clean
-          forge test
+          forge test -vv
           forge test --gas-report
           

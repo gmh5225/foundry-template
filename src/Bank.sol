@@ -5,6 +5,11 @@ contract Bank {
     mapping(address => uint256) public balances;
     address[3] public topDepositors;
 
+    // Custom errors
+    error DepositTooLow();
+    error OnlyAdminCanWithdraw();
+    error InsufficientBalance(uint256 requested, uint256 available);
+
     constructor() {
         admin = msg.sender;
     }
@@ -17,7 +22,10 @@ contract Bank {
 
     // Deposit function
     function deposit() public payable {
-        require(msg.value > 0, "Deposit amount must be greater than 0");
+        // Revert if deposit amount is 0
+        if (msg.value == 0) {
+            revert DepositTooLow();
+        }
         balances[msg.sender] += msg.value;
         updateTopDepositors(msg.sender);
     }
@@ -44,8 +52,14 @@ contract Bank {
 
     // Withdrawal function (only callable by admin)
     function withdraw(uint256 amount) external {
-        require(msg.sender == admin, "Only admin can withdraw");
-        require(amount <= address(this).balance, "Insufficient balance");
+        // Revert if caller is not admin
+        if (msg.sender != admin) {
+            revert OnlyAdminCanWithdraw();
+        }
+        // Revert if requested amount exceeds balance
+        if (amount > address(this).balance) {
+            revert InsufficientBalance(amount, address(this).balance);
+        }
         payable(admin).transfer(amount);
     }
 

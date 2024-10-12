@@ -9,6 +9,7 @@ contract Bank {
     // Custom errors
     error DepositTooLow();
     error OnlyAdminCanWithdraw();
+    error WithdrawalFailed();
 
     constructor() {
         admin = msg.sender;

@@ -46,7 +46,7 @@ forge build
 Run the tests:
 
 ```
-forge test
+forge test -vv
 ```
 
 Get a test coverage report:

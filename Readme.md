@@ -91,6 +91,13 @@ forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url sepolia --broa
 forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --fork-url sepolia --broadcast
 ```
 
+If you want to generate actual transactions on the chain, then use ``--rpc-url``
+```
+forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --rpc-url sepolia --broadcast
+```
+
+
+
 
 For instructions on how to deploy to a testnet or mainnet, check out the
 [Solidity Scripting](https://book.getfoundry.sh/tutorials/solidity-scripting.html) tutorial.

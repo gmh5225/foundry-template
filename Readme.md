@@ -1,5 +1,5 @@
 # Foundry Template
-Foundry Template on arbitrum
+Foundry Template for arbitrum
 
 ## Usage
 

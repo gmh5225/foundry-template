@@ -81,19 +81,19 @@ forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost -
 
 #### Sepolia:
 
-##### Deploy to ``Sepolia``
+##### Deploy to ``Arbitrum-Sepolia``
 ```
-forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url sepolia --broadcast --verify -vvvv
+forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url arbitrum_sepolia --broadcast --verify -vvvv
 ```
 
-##### Interact with ``Sepolia``
+##### Interact with ``Arbitrum-Sepolia``
 ```
-forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --fork-url sepolia --broadcast -vvvv
+forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --fork-url arbitrum_sepolia --broadcast -vvvv
 ```
 
 If you want to generate actual transactions on the chain, then use ``--rpc-url``
 ```
-forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --rpc-url sepolia --broadcast -vvvv
+forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --rpc-url arbitrum_sepolia --broadcast -vvvv
 ```
 
 

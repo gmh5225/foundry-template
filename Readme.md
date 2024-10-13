@@ -74,6 +74,11 @@ anvil
 forge script script/Bank.s.sol --fork-url localhost --broadcast -vvvv
 ```
 
+If you want to use any private key to deploy, then use ``forge create``
+```
+forge create src/bank.sol:Bank --rpc-url localhost --private-key {Your private key}
+```
+
 ##### Deploy to ``Anvil`` with ``BankInteract.s.sol``
 ```
 forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost --broadcast -vvvv
@@ -84,6 +89,11 @@ forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost -
 ##### Deploy to ``Arbitrum-Sepolia``
 ```
 forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url arbitrum_sepolia --broadcast --verify -vvvv
+```
+
+If you want to use any private key to deploy, then use ``forge create``
+```
+forge create src/bank.sol:Bank --rpc-url arbitrum_sepolia --private-key {Your private key}
 ```
 
 ##### Interact with ``Arbitrum-Sepolia``

@@ -71,12 +71,12 @@ anvil
 
 ##### Deploy to ``Anvil``
 ```
-forge script script/Bank.s.sol --fork-url localhost --broadcast
+forge script script/Bank.s.sol --fork-url localhost --broadcast -vvvv
 ```
 
 ##### Deploy to ``Anvil`` with ``BankInteract.s.sol``
 ```
-forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost --broadcast
+forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost --broadcast -vvvv
 ```
 
 #### Sepolia:
@@ -88,12 +88,12 @@ forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url sepolia --broa
 
 ##### Interact with ``Sepolia``
 ```
-forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --fork-url sepolia --broadcast
+forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --fork-url sepolia --broadcast -vvvv
 ```
 
 If you want to generate actual transactions on the chain, then use ``--rpc-url``
 ```
-forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --rpc-url sepolia --broadcast
+forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --rpc-url sepolia --broadcast -vvvv
 ```
 
 

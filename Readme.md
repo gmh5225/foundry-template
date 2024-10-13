@@ -83,7 +83,7 @@ forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost -
 
 ##### Deploy to ``Sepolia``
 ```
-forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url sepolia --broadcast -verify -vvvv
+forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url sepolia --broadcast --verify -vvvv
 ```
 
 ##### Interact with ``Sepolia``

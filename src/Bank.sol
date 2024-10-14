@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
+import "@openzeppelin/contracts/utils/Address.sol";
+
 contract Bank {
     address public admin;
     mapping(address => uint256) public balances;
@@ -63,10 +65,7 @@ contract Bank {
         if (amount != 0) {
             // Transfer fixedly uses 2300 gas, which may not be enough in some cases
             // payable(admin).transfer(amount);
-            (bool success,) = payable(admin).call{value: amount}("");
-            if (!success) {
-                revert WithdrawalFailed();
-            }
+            Address.sendValue(payable(admin), amount);
         }
     }
 

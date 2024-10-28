@@ -2,8 +2,9 @@
 pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Bank {
+contract Bank is Ownable {
     address public admin;
     mapping(address => uint256) public balances;
     address[3] public topDepositors;
@@ -13,7 +14,7 @@ contract Bank {
     error OnlyAdminCanWithdraw();
     error WithdrawalFailed();
 
-    constructor() {
+    constructor() Ownable(msg.sender) {
         admin = msg.sender;
     }
 
@@ -82,5 +83,11 @@ contract Bank {
     // Function to get deposit amount for a specific depositor
     function getDepositAmount(address depositor) public view returns (uint256) {
         return balances[depositor];
+    }
+
+    // Function to destroy the contract, only callable by owner
+    // although "selfdestruct" has been deprecated, it's still used here for compatibility with older contracts
+    function destroy(address payable recipient) public onlyOwner {
+        selfdestruct(recipient);
     }
 }

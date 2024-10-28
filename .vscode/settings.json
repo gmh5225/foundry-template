@@ -10,6 +10,7 @@
     "solidity.packageDefaultDependenciesDirectory": "lib",
     "solidity.remappings": [
         "@openzeppelin/=lib/openzeppelin-contracts/",
+        "@openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
         "@solmate/=lib/solmate/src/",
         "@forge/=lib/forge-std/src/"
     ]

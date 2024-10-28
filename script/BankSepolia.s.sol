@@ -35,7 +35,7 @@ contract BankSepoliaScript is Script {
         vm.startBroadcast(deployerPrivateKey);
 
         // Bank newBank = new Bank();
-        //console2.log("Bank deployed to:", address(newBank));
+        // console2.log("Bank deployed to:", address(newBank));
 
         // send 0.00001 ETH (10000000000000 wei)
         address addr = Create2.deploy(0, SALT, BYTECODE);

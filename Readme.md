@@ -117,6 +117,10 @@ forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --rpc-url arbi
 forge script script/BankDestroy.s.sol:BankDestroyScript --rpc-url arbitrum_sepolia --broadcast -vvvv
 ```
 
+#### result of "Destroy the contract"
+```
+https://sepolia.arbiscan.io/tx/0x4878408b3ea0fede3524bcec5ee6b1c048380e2fa5784f0ba20652b6840aba5c
+```
 
 
 For instructions on how to deploy to a testnet or mainnet, check out the

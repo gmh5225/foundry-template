@@ -16,7 +16,11 @@
   solc = "0.8.28"
   src = "src"
   test = "test"
-
+  fs_permissions = [
+    { access = "read", path = "./test"},
+    { access = "read", path = "./lib"}
+  ]
+  
 [profile.ci]
   fuzz = { runs = 10_000 }
   verbosity = 4

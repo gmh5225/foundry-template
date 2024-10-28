@@ -37,6 +37,7 @@ contract BankSepoliaScript is Script {
         Bank bank = new Bank();
         console2.log("Bank deployed to:", address(bank));
 
+        // if you want to use bytecode has been compiled, you can use the following code
         // address addr = deploy(bytecode, SALT);
         // console2.log("Bank deployed to:", addr);
         console2.log("Deployed by:", deployerAddress);

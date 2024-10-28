@@ -1,7 +1,6 @@
 # Full reference https://github.com/foundry-rs/foundry/tree/master/crates/config
 
 [profile.default]
-  unchecked_cheatcode_artifacts = true
   auto_detect_solc = false
   block_timestamp = 1_680_220_800 # March 31, 2023 at 00:00 GMT
   bytecode_hash = "none"
@@ -16,6 +15,7 @@
   solc = "0.8.28"
   src = "src"
   test = "test"
+  unchecked_cheatcode_artifacts = true
   fs_permissions = [
     { access = "read", path = "./test"},
     { access = "read", path = "./lib"}

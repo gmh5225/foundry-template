@@ -92,6 +92,11 @@ forge script script/BankInteract.s.sol:BankInteractScript --fork-url localhost -
 forge script script/BankSepolia.s.sol:BankSepoliaScript --rpc-url arbitrum_sepolia --broadcast --verify -vvvv
 ```
 
+##### Contract Address
+```
+0x87acF4b407765220476AB0b2A1c204C99DfD1BbE
+```
+
 If you want to use any private key to deploy, then use ``forge create``
 ```
 forge create src/bank.sol:Bank --rpc-url arbitrum_sepolia --private-key {Your private key}
@@ -107,6 +112,10 @@ If you want to generate actual transactions on the chain, then use ``--rpc-url``
 forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --rpc-url arbitrum_sepolia --broadcast -vvvv
 ```
 
+##### Destroy the contract
+```
+forge script script/BankDestroy.s.sol:BankDestroyScript --rpc-url arbitrum_sepolia --broadcast -vvvv
+```
 
 
 

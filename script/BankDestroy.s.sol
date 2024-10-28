@@ -1,0 +1,30 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
+
+import "forge-std/Script.sol";
+import "forge-std/console2.sol";
+import "../src/Bank.sol";
+
+contract BankDestroyScript is Script {
+    function setUp() public { }
+
+    function run() public {
+        uint256 deployerPrivateKey = vm.envUint("SEPOLIA_WALLET_PRIVATE_KEY");
+        address bankAddress = vm.envAddress("BANK_CONTRACT_ADDRESS");
+        address payable recipient = payable(vm.envAddress("SEPOLIA_WALLET_PRIVATE_KEY"));
+
+        Bank bank = Bank(bankAddress);
+        vm.startBroadcast(deployerPrivateKey);
+
+        try bank.destroy(recipient) {
+            console2.log("Contract destroyed successfully");
+            console2.log("Funds sent to:", recipient);
+        } catch Error(string memory reason) {
+            console2.log("Destroy failed:", reason);
+        } catch {
+            console2.log("Destroy failed with unknown error");
+        }
+
+        vm.stopBroadcast();
+    }
+}

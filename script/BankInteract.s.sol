@@ -16,6 +16,7 @@ contract BankInteractScript is Script {
     }
 
     function run() public {
+        // TODO: encrypt your private key
         uint256 deployerPrivateKey = vm.envUint("WALLET_PRIVATE_KEY");
         address deployer = vm.addr(deployerPrivateKey);
 

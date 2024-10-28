@@ -9,6 +9,7 @@ contract BankDestroyScript is Script {
     function setUp() public { }
 
     function run() public {
+        // TODO: encrypt your private key
         uint256 deployerPrivateKey = vm.envUint("SEPOLIA_WALLET_PRIVATE_KEY");
         address payable bankAddress = payable(vm.envAddress("BANK_CONTRACT_ADDRESS"));
         address payable recipient = payable(vm.envAddress("RECIPIENT_ADDRESS"));

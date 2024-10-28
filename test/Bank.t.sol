@@ -2,6 +2,7 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
+import "forge-std/console2.sol";
 import "src/Bank.sol";
 
 contract BankTest is Test {
@@ -9,6 +10,14 @@ contract BankTest is Test {
 
     function setUp() public {
         bank = new Bank();
+
+        // get code size
+        uint256 codeSize;
+        address bankAddr = address(bank);
+        assembly {
+            codeSize := extcodesize(bankAddr)
+        }
+        console2.log("[before]: codeSize", codeSize);
     }
 
     // receive function to receive ETH
@@ -62,9 +71,22 @@ contract BankTest is Test {
         assertEq(topDepositors[2], user1);
     }
 
-    // // test destroy function
-    // function testDestroy() public {
-    //     vm.prank(bank.owner());
-    //     bank.destroy(payable(bank.owner()));
-    // }
+    function testDestroy() public {
+        // ensure contract has some ETH for testing
+        vm.deal(address(bank), 1 ether);
+
+        // create a recipient address
+        address payable recipient = payable(makeAddr("recipient"));
+        uint256 initialBalance = recipient.balance;
+
+        // record contract's initial balance
+        uint256 bankBalance = address(bank).balance;
+
+        // call destroy function
+        bank.destroy(recipient);
+
+        // verify:
+        // 1. recipient should receive all ETH
+        assertEq(recipient.balance, initialBalance + bankBalance);
+    }
 }

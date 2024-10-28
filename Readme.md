@@ -107,6 +107,10 @@ If you want to generate actual transactions on the chain, then use ``--rpc-url``
 forge script script/BankSepoliaInteract.s.sol:BankSepoliaInteract --rpc-url arbitrum_sepolia --broadcast -vvvv
 ```
 
+##### Destroy the contract
+```
+forge script script/BankDestroy.s.sol:BankDestroyScript --rpc-url arbitrum_sepolia --broadcast -vvvv
+```
 
 
 

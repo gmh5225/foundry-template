@@ -17,6 +17,10 @@ SEPOLIA_WALLET_PRIVATE_KEY=your wallet private key [Used for BankSepolia.s.sol/B
 BANK_CONTRACT_ADDRESS=your contract address [Used for BankSepoliaInteract.s.sol]
 ```
 
+## Install deps
+```
+forge install
+```
 
 ### Build
 

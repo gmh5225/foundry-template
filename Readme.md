@@ -138,6 +138,11 @@ Format the contracts:
 forge fmt
 ```
 
+
+### GUI wrapper command-line tool
+- https://github.com/gmh5225/forge-gui
+
+
 ## Credits
 - https://github.com/PaulRBerg/foundry-template
 - https://github.com/hrkrshnn/tstore-template

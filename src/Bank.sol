@@ -3,8 +3,10 @@ pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/Pausable.sol";
 
-contract Bank is Ownable {
+contract Bank is Ownable, ReentrancyGuard, Pausable {
     address public admin;
     mapping(address => uint256) public balances;
     address[3] public topDepositors;
@@ -24,8 +26,18 @@ contract Bank is Ownable {
         deposit();
     }
 
+    // Pause function
+    function pause() external onlyOwner {
+        _pause();
+    }
+
+    // Unpause function
+    function unpause() external onlyOwner {
+        _unpause();
+    }
+
     // Deposit function
-    function deposit() public payable {
+    function deposit() public payable whenNotPaused nonReentrant {
         // Revert if deposit amount is 0
         if (msg.value == 0) {
             revert DepositTooLow();
@@ -55,7 +67,7 @@ contract Bank is Ownable {
     }
 
     // Withdrawal function (only callable by admin)
-    function withdraw(uint256 amount) external {
+    function withdraw(uint256 amount) external whenNotPaused nonReentrant {
         // Revert if caller is not admin
         if (msg.sender != admin) {
             revert OnlyAdminCanWithdraw();

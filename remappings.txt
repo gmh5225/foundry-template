@@ -2,4 +2,5 @@
 @openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/
 @solmate/=lib/solmate/src/
 @solady/=lib/solady/src/
+@permit2-light-sdk/=lib/permit2-light-sdk/
 @forge/=lib/forge-std/src/

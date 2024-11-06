@@ -18,7 +18,8 @@
   unchecked_cheatcode_artifacts = true
   fs_permissions = [
     { access = "read", path = "./test"},
-    { access = "read", path = "./lib"}
+    { access = "read", path = "./lib"},
+    { access = "read", path = "./src"}
   ]
   
 [profile.ci]

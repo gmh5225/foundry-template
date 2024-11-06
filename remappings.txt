@@ -3,4 +3,5 @@
 @solmate/=lib/solmate/src/
 @solady/=lib/solady/src/
 @permit2-light-sdk/=lib/permit2-light-sdk/
+@uups-proxy-factory-sdk/=lib/UUPSProxyFactorySDK/
 @forge/=lib/forge-std/src/

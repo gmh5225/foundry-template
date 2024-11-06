@@ -16,3 +16,6 @@
 [submodule "lib/permit2-light-sdk"]
 	path = lib/permit2-light-sdk
 	url = https://github.com/gmh5225/permit2-light-sdk
+[submodule "lib/UUPSProxyFactorySDK"]
+	path = lib/UUPSProxyFactorySDK
+	url = https://github.com/gmh5225/UUPSProxyFactorySDK

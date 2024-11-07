@@ -1,3 +1,5 @@
-BankTest:testDeposit() (gas: 71335)
-BankTest:testFailWithdrawNotAdmin() (gas: 10553)
-BankTest:testTopDepositors() (gas: 183144)
+BankTest:testDeposit() (gas: 75001)
+BankTest:testDestroy() (gas: 42784)
+BankTest:testFailWithdrawNotAdmin() (gas: 15092)
+BankTest:testTopDepositors() (gas: 186350)
+BankTest:testWithdraw() (gas: 23170)

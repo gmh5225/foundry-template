@@ -19,3 +19,6 @@
 [submodule "lib/UUPSProxyFactorySDK"]
 	path = lib/UUPSProxyFactorySDK
 	url = https://github.com/gmh5225/UUPSProxyFactorySDK
+[submodule "lib/Multicall3-SDK"]
+	path = lib/Multicall3-SDK
+	url = https://github.com/gmh5225/Multicall3-SDK

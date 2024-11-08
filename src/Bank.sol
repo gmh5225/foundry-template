@@ -9,7 +9,6 @@ import { Pausable } from "@openzeppelin/contracts/utils/Pausable.sol";
 contract Bank is Ownable, ReentrancyGuardTransient, Pausable {
     address public admin;
     mapping(address => uint256) public balances;
-    address[3] public topDepositors;
 
     // Custom errors
     error DepositTooLow();
@@ -43,27 +42,6 @@ contract Bank is Ownable, ReentrancyGuardTransient, Pausable {
             revert DepositTooLow();
         }
         balances[msg.sender] += msg.value;
-        updateTopDepositors(msg.sender);
-    }
-
-    // Update top 3 depositors
-    function updateTopDepositors(address depositor) private {
-        uint256 depositAmount = balances[depositor];
-        uint256 index = 3;
-
-        for (uint256 i = 0; i < 3; i++) {
-            if (depositAmount > balances[topDepositors[i]]) {
-                index = i;
-                break;
-            }
-        }
-
-        if (index < 3) {
-            for (uint256 i = 2; i > index; i--) {
-                topDepositors[i] = topDepositors[i - 1];
-            }
-            topDepositors[index] = depositor;
-        }
     }
 
     // Withdrawal function (only callable by admin)
@@ -85,11 +63,6 @@ contract Bank is Ownable, ReentrancyGuardTransient, Pausable {
     // Query contract balance
     function getBalance() public view returns (uint256) {
         return address(this).balance;
-    }
-
-    // Query top 3 depositors
-    function getTopDepositors() public view returns (address[3] memory) {
-        return topDepositors;
     }
 
     // Function to get deposit amount for a specific depositor

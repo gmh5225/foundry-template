@@ -49,28 +49,6 @@ contract BankTest is Test {
         bank.withdraw(0.5 ether);
     }
 
-    function testTopDepositors() public {
-        address user1 = makeAddr("user1");
-        address user2 = makeAddr("user2");
-        address user3 = makeAddr("user3");
-
-        vm.deal(user1, 1 ether);
-        vm.deal(user2, 2 ether);
-        vm.deal(user3, 3 ether);
-
-        vm.prank(user1);
-        bank.deposit{ value: 0.5 ether }();
-        vm.prank(user2);
-        bank.deposit{ value: 1 ether }();
-        vm.prank(user3);
-        bank.deposit{ value: 1.5 ether }();
-
-        address[3] memory topDepositors = bank.getTopDepositors();
-        assertEq(topDepositors[0], user3);
-        assertEq(topDepositors[1], user2);
-        assertEq(topDepositors[2], user1);
-    }
-
     function testDestroy() public {
         // ensure contract has some ETH for testing
         vm.deal(address(bank), 1 ether);

@@ -60,15 +60,6 @@ contract BankInteractScript is Script {
         uint256 balance = bank.getBalance();
         console2.log("Contract balance: %s.%s ETH", balance / 1e18, (balance % 1e18) / 1e14);
 
-        // Query top 3 depositors
-        address[3] memory topDepositors = bank.getTopDepositors();
-        console2.log("Top 3 depositors:");
-        for (uint256 i = 0; i < 3; i++) {
-            uint256 depositAmount = bank.getDepositAmount(topDepositors[i]);
-            console2.log("%s: %s", i + 1, topDepositors[i]);
-            console2.log("depositAmount: %s.%s ETH", depositAmount / 1e18, (depositAmount % 1e18) / 1e14);
-        }
-
         // Withdraw (only admin can operate)
         vm.broadcast(deployerPrivateKey);
         try bank.withdraw(0.5 ether) {
@@ -88,14 +79,6 @@ contract BankInteractScript is Script {
         // Query balance again
         balance = bank.getBalance();
         console2.log("Contract balance after withdrawal: %s.%s ETH", balance / 1e18, (balance % 1e18) / 1e14);
-
-        // Query top 3 depositors again
-        console2.log("Top 3 depositors after withdrawal:");
-        for (uint256 i = 0; i < 3; i++) {
-            uint256 depositAmount = bank.getDepositAmount(topDepositors[i]);
-            console2.log("%s: %s", i + 1, topDepositors[i]);
-            console2.log("depositAmount: %s.%s ETH", depositAmount / 1e18, (depositAmount % 1e18) / 1e14);
-        }
     }
 }
 

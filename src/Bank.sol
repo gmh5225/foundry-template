@@ -3,10 +3,10 @@ pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuardTransient.sol";
 import "@openzeppelin/contracts/utils/Pausable.sol";
 
-contract Bank is Ownable, ReentrancyGuard, Pausable {
+contract Bank is Ownable, ReentrancyGuardTransient, Pausable {
     address public admin;
     mapping(address => uint256) public balances;
     address[3] public topDepositors;

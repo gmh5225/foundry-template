@@ -15,8 +15,8 @@ contract Bank is Ownable, ReentrancyGuardTransient, Pausable {
     error OnlyAdminCanWithdraw();
     error WithdrawalFailed();
 
-    constructor() Ownable(msg.sender) {
-        admin = msg.sender;
+    constructor(address initialAdmin) Ownable(initialAdmin) {
+        admin = initialAdmin;
     }
 
     // Receive ETH

@@ -5,7 +5,7 @@ import "forge-std/Script.sol";
 import "forge-std/console2.sol";
 import "../src/Bank.sol";
 
-contract BankDestroyScript is Script {
+contract DestroyScript is Script {
     function setUp() public { }
 
     function run() public {

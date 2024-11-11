@@ -6,7 +6,7 @@ import "forge-std/console2.sol";
 import "../src/Bank.sol";
 import "@openzeppelin/contracts/utils/Create2.sol";
 
-contract BankSepoliaScript is Script {
+contract DeployScript is Script {
     bytes32 constant SALT = bytes32(uint256(0x0000000000000000000000000000000000000000d3bf2663da51c10215000003));
 
     // contract bytecode

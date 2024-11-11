@@ -84,7 +84,7 @@ forge script script/Deploy.s.sol:DeployScript --rpc-url arbitrum_sepolia --broad
 
 ##### Destroy the contract
 ```
-forge script script/BankDestroy.s.sol:BankDestroyScript --rpc-url arbitrum_sepolia --broadcast -vvvv
+forge script script/Destroy.s.sol:DestroyScript --rpc-url arbitrum_sepolia --broadcast -vvvv
 ```
 
 #### result of "Destroy the contract"

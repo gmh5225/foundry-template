@@ -46,6 +46,10 @@
   sepolia = { key = "${API_KEY_ETHERSCAN}" }
   # unichain = { key = "${API_KEY_ETHERSCAN}" }
   # unichain_sepolia = { key = "${API_KEY_ETHERSCAN}" }
+  # zksync = { key = "${ETHERSCAN_API_KEY}" }
+  # zksync_sepolia = { key = "${ETHERSCAN_API_KEY}" }
+  # polygon_zkevm = { key = "${ETHERSCAN_API_KEY}" }
+  # polygon_zkevm_testnet = { key = "${ETHERSCAN_API_KEY}" }
 
 [fmt]
   bracket_spacing = true
@@ -67,7 +71,12 @@
   goerli = "https://goerli.infura.io/v3/${API_KEY_INFURA}"
   localhost = "http://localhost:8545"
   mainnet = "https://eth-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
-  optimism = "https://optimism-mainnet.infura.io/v3/${API_KEY_INFURA}"
-  polygon = "https://polygon-mainnet.infura.io/v3/${API_KEY_INFURA}"
   sepolia = "https://sepolia.infura.io/v3/${API_KEY_INFURA}"
+  optimism = "https://optimism-mainnet.infura.io/v3/${API_KEY_INFURA}"
+  optimism_sepolia = "https://optimism-sepolia.infura.io/v3/${INFURA_KEY}"
+  polygon = "https://polygon-mainnet.infura.io/v3/${API_KEY_INFURA}"
+  polygon_zkevm = "https://zkevm-rpc.com"
+  polygon_zkevm_testnet = "https://rpc.public.zkevm-test.net"
+  zksync = "https://zksync-mainnet.infura.io/v3/${INFURA_KEY}"
+  zksync_sepolia = "https://zksync-sepolia.infura.io/v3/${INFURA_KEY}"
   unichain_sepolia = "https://sepolia.unichain.org"

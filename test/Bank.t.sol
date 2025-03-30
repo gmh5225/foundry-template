@@ -46,6 +46,7 @@ contract BankTest is Test {
     function test_RevertWhen_NotAdminWithdraws() public {
         vm.deal(address(bank), 1 ether);
         vm.prank(makeAddr("user"));
+        vm.expectRevert(Bank.OnlyAdminCanWithdraw.selector);
         bank.withdraw(0.5 ether);
     }
 

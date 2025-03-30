@@ -106,7 +106,8 @@ forge fmt
 
 
 ### GUI wrapper command-line tool
-- https://github.com/gmh5225/forge-gui
+- https://github.com/gmh5225/forge-gui [Windows users]
+- https://github.com/gmh5225/forge-gui-html [MacOS/Linux users]
 
 
 ## Credits

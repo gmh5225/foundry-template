@@ -43,7 +43,7 @@ contract BankTest is Test {
         assertEq(bankAdmin.balance, initialBalance + 1 ether);
     }
 
-    function testFailWithdrawNotAdmin() public {
+    function test_RevertWhen_NotAdminWithdraws() public {
         vm.deal(address(bank), 1 ether);
         vm.prank(makeAddr("user"));
         bank.withdraw(0.5 ether);

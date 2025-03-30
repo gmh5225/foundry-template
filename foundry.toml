@@ -13,7 +13,7 @@
   ffi = true
   out = "out"
   script = "script"
-  solc = "0.8.28"
+  solc = "0.8.29"
   src = "src"
   test = "test"
   unchecked_cheatcode_artifacts = true
